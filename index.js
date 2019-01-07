@@ -55,8 +55,6 @@
       return Promise.using(this._writeAuthFile(), (function(_this) {
         return function() {
           return new Promise(function(resolve, reject) {
-            var contents;
-            contents = fs.readFileSync(_this.vpnOpts[_this.vpnOpts.length - 1], 'utf-8');
             _this.proc = spawn('openvpn', _this.vpnOpts);
             _this.proc.stdout.on('data', function(data) {
               var m;
